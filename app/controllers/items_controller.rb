@@ -13,25 +13,15 @@ class ItemsController < ApplicationController
       })
 
       results.each do |result|
-        item = Item.new(read(result))
+        item = item = Item.find_or_initialize_by(read(result))
         @items << item
       end
     end
   end
 
-  private
-
-  def read(result)
-    code = result['jan']
-    name = result['title']
-    url =  result['itemUrl']
-    image_url = result['mediumImageUrl'].gsub('?_ex=120x120', '')
-
-    {
-      code: code,
-      name: name,
-      url: url,
-      image_url: image_url,
-    }
+  def show
+    @item = Item.find(params[:id])
+    @want_users = @item.want_users
+    @have_users = @item.have_users
   end
 end
