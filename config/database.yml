@@ -47,8 +47,16 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#  <<: *default
+#  database: gameshelf_production
+#  username: gameshelf
+#  password: <%= ENV['GAMESHELF_DATABASE_PASSWORD'] %>
+
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: gameshelf_production
   username: gameshelf
   password: <%= ENV['GAMESHELF_DATABASE_PASSWORD'] %>
