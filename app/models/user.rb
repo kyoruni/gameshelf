@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_many :haves, class_name: 'Have'
   has_many :have_items, through: :haves, class_name: 'Item', source: :item # ユーザーがhaveしたitem
+
   has_secure_password
 
   def want(item)
@@ -40,5 +41,4 @@ class User < ApplicationRecord
   def have?(item)
     self.have_items.include?(item)
   end
-
 end

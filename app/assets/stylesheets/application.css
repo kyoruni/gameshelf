@@ -60,6 +60,7 @@ footer {
   height: 100%;
   max-width: 100%;
 }
+
 p.item-title {
   /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
   display: -webkit-box;
@@ -104,4 +105,3 @@ p.item-title {
 .user-profile .status ul li .status-value {
   font-size: 18px;
 }
-

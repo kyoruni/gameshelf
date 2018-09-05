@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   # items
   resources :items, only: [:show, :new]
+
+  # ownerships
   resources :ownerships, only: [:create, :destroy]
 
   # ranking
