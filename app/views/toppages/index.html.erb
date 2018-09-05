@@ -4,7 +4,7 @@
       <div class="cover-contents">
         <h3>Game Shelfはお気に入りのゲームを共有できるサービスです。</h3>
         <% unless logged_in? %>
-          <a href="" class="btn btn-success btn-lg">Game Shelfを始める</a>
+          <%= link_to 'Game Shelfを始める', signup_path, class: 'btn btn-success btn-lg' %>
         <% end %>
       </div>
     </div>
